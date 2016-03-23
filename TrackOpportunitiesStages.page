@@ -4,7 +4,8 @@
             <apex:column value="{!olstOpportunityHistory.StageName}"/>
             <apex:column headerValue="Start Date">             
                  <apex:outputText value="{0,date,MM/dd/yy}"> 
-                     <apex:param value="{!olstOpportunityHistory.CreatedDate}" /> 
+                     <apex:param value="{!olstOpportunityHistory.CreatedDate}" />
+                     <!--<apex:param value="{!Opportunity.LastModifiedDate}" />--> 
                  </apex:outputText> 
             </apex:column>
             <apex:column headerValue="No. of Days in Stage">
