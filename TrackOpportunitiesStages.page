@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity" extensions="OpportunityStage">
+      <apex:pageBlock >      
+        <apex:pageBlockTable value="{!lstOpportunityHistory}" var="olstOpportunityHistory" columns="3">       
+            <apex:column value="{!olstOpportunityHistory.StageName}"/>
+            <apex:column headerValue="Start Date">             
+                 <apex:outputText value="{0,date,MM/dd/yy}"> 
+                     <apex:param value="{!olstOpportunityHistory.CreatedDate}" /> 
+                 </apex:outputText> 
+            </apex:column>
+            <apex:column headerValue="No. of Days in Stage">
+                 <apex:outputText value="{!Today() - Datevalue(olstOpportunityHistory.CreatedDate)}"/>
+            </apex:column> 
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
